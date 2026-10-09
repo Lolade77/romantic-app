@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Screen Transitions
+    // 3. Screen Transitions & Interactivity
     const screenEnvelope = document.getElementById('screen-envelope');
     const screenProposal = document.getElementById('screen-proposal');
     const screenCelebration = document.getElementById('screen-celebration');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const personalNote = document.getElementById('personalNote');
     const whatsappLink = document.getElementById('whatsappLink');
 
-    // Open Envelope
+    // Open Envelope Action
     if (openEnvelopeBtn) {
         openEnvelopeBtn.addEventListener('click', () => {
             if (screenEnvelope && screenProposal) {
@@ -97,14 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Reveal Personal Note
+    // Toggle Personal Note Visibility ("One More Thing...")
     if (noteToggleBtn && personalNote) {
         noteToggleBtn.addEventListener('click', () => {
             personalNote.classList.toggle('hidden');
         });
     }
 
-    // Dodging Button Logic
+    // Dodging "Let Me Think" Button Logic
     function moveButton() {
         if (!thinkBtn) return;
         const x = Math.floor(Math.random() * 220) - 110;
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Canvas Confetti
+    // Canvas Confetti Animation
     function triggerConfetti() {
         if (typeof confetti !== 'function') return;
 
