@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made especially for {{ config.her_name }} ❤️</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div id="hearts-container"></div>
+
+    <div class="audio-control" id="audioToggle">
+        <span id="audioIcon">🎵</span>
+        <audio id="bgMusic" loop preload="auto">
+            <source src="{{ url_for('static', filename='audio/romantic_song.mp3') }}" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="container">
+        
+        <!-- STEP 01: Envelope -->
+        <div id="screen-envelope" class="card active">
+            <p class="special-tag">Made especially for {{ config.her_name }}</p>
+            <div class="envelope-wrapper" id="openEnvelopeBtn">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="heart-seal">💌</div>
+                </div>
+            </div>
+            <h1 class="romantic-title">Hello, {{ config.her_name }}</h1>
+            <p class="subtitle">{{ config.intro_title }}</p>
+            <p class="tap-hint">Tap the letter to open ❤️</p>
+        </div>
+
+        <!-- STEP 02: Proposal -->
+        <div id="screen-proposal" class="card hidden">
+            {% if config.use_photo %}
+            <div class="photo-frame">
+                <img src="{{ url_for('static', filename='images/nini.png') }}" alt="Our favorite view" class="card-photo">
+                <p class="photo-caption">My favourite view lately ❤️</p>
+            </div>
+            {% endif %}
+
+            <h2 class="romantic-message">{{ config.main_question }}</h2>
+
+            <button id="noteToggleBtn" class="btn btn-note">{{ config.personal_note_title }}</button>
+            <div id="personalNote" class="personal-note-box hidden">
+                <p>{{ config.personal_note_body }}</p>
+            </div>
+            
+            <div class="button-group">
+                <button id="yesBtn" class="btn btn-yes">Yes, Forever ❤️</button>
+                <button id="thinkBtn" class="btn btn-think">Let Me Think 🤭</button>
+            </div>
+        </div>
+
+        <!-- STEP 03: Celebration -->
+        <div id="screen-celebration" class="card hidden">
+            <h1 class="celebration-title">{{ config.yes_title }}</h1>
+            <p class="celebration-body">{{ config.yes_message }}</p>
+            
+            {% if config.use_photo %}
+            <img src="{{ url_for('static', filename='images/niniola.png') }}" alt="Together Forever" class="card-photo glow">
+            {% endif %}
+
+            <div class="sparkles">✨ 💞 💖 ✨</div>
+
+            <p class="sweet-ending">No matter what, I'm so glad you came into my little corner of the internet. ❤️</p>
+
+            <a id="whatsappLink" href="#" target="_blank" class="btn btn-whatsapp">
+                Send Me a WhatsApp Reply 📲
+            </a>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
