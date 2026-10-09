@@ -3,7 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 CONFIG = {
-    "her_name": "baby girl 😉",
+    "her_name": " Niniola 😉",
     "intro_title": "Someone sent you a private letter... 💌",
     "main_question": "You’ve made me the happiest person since I met you. Now I’m wondering… Are you my God-given person? Will you spend the rest of your life with me? ❤️",
     "personal_note_title": "One More Thing... 💌",
