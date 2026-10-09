@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 screenProposal.classList.add('active');
             }
 
-            // Start playing background music on interaction
+            // Unmute & start audio directly inside user tap/click interaction
             if (!isPlaying) {
                 playAudio();
             }
