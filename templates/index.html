@@ -16,10 +16,9 @@
 
     <div class="audio-control" id="audioToggle">
         <span id="audioIcon">🔊</span>
-        <!-- Invisible video element required for proper MP4 playback on mobile/desktop -->
-        <video id="bgMusic" loop playsinline style="display: none;">
-            <source src="{{ url_for('static', filename='audio/fola.mp4') }}" type="video/mp4">
-        </video>
+        <audio id="bgMusic" loop preload="auto">
+            <source src="{{ url_for('static', filename='audio/romantic_song.mp3') }}" type="audio/mpeg">
+        </audio>
     </div>
 
     <div class="container">

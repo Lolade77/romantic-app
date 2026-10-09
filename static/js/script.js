@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (audioIcon) audioIcon.innerText = '🔊';
                 if (mainPlayBtn) mainPlayBtn.style.display = 'none';
             }).catch(error => {
-                console.log("Media play blocked or pending interaction:", error);
+                console.log("Audio playback prevented:", error);
             });
         }
     }
