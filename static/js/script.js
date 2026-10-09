@@ -25,10 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(createFloatingHeart, 450);
     }
 
-    // 2. Audio Control
+    // 2. Audio Controls
     const audioToggle = document.getElementById('audioToggle');
     const bgMusic = document.getElementById('bgMusic');
     const audioIcon = document.getElementById('audioIcon');
+    const mainPlayBtn = document.getElementById('mainPlayBtn');
     let isPlaying = false;
 
     function playAudio() {
@@ -36,8 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
             bgMusic.play().then(() => {
                 isPlaying = true;
                 if (audioIcon) audioIcon.innerText = '🔊';
+                if (mainPlayBtn) mainPlayBtn.style.display = 'none';
             }).catch(error => {
-                console.log("Autoplay prevented or audio unavailable:", error);
+                console.log("Autoplay blocked or audio format invalid:", error);
             });
         }
     }
@@ -57,6 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 playAudio();
             }
+        });
+    }
+
+    if (mainPlayBtn) {
+        mainPlayBtn.addEventListener('click', () => {
+            playAudio();
         });
     }
 
@@ -83,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 screenProposal.classList.add('active');
             }
 
-            // Unmute & start audio directly inside user tap/click interaction
             if (!isPlaying) {
                 playAudio();
             }
@@ -128,13 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 screenCelebration.classList.add('active');
             }
 
-            // Construct WhatsApp Reply Link
             if (whatsappLink) {
                 const message = encodeURIComponent("YES! I'd love to spend the rest of my life with you! ❤️✨");
                 whatsappLink.href = `https://wa.me/?text=${message}`;
             }
 
-            // Trigger Confetti Stream
             triggerConfetti();
         });
     }

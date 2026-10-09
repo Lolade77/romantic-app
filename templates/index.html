@@ -39,6 +39,11 @@
 
         <!-- STEP 02: Proposal -->
         <div id="screen-proposal" class="card hidden">
+            
+            <button id="mainPlayBtn" class="btn btn-note" style="background: #ffe6ea; color: #ff4b2b; margin-bottom: 15px; width: 100%;">
+                Play Music 🎵
+            </button>
+
             {% if config.use_photo %}
             <div class="photo-frame">
                 <img src="{{ url_for('static', filename='images/nini.png') }}" alt="Our favorite view" class="card-photo">
