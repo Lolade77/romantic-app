@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(createFloatingHeart, 450);
     }
 
-    // 2. Audio Controls
+    // 2. Audio Control
     const audioToggle = document.getElementById('audioToggle');
     const bgMusic = document.getElementById('bgMusic');
     const audioIcon = document.getElementById('audioIcon');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (audioIcon) audioIcon.innerText = '🔊';
                 if (mainPlayBtn) mainPlayBtn.style.display = 'none';
             }).catch(error => {
-                console.log("Audio playback prevented:", error);
+                console.log("Autoplay blocked or audio error:", error);
             });
         }
     }
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Screen Transitions & UI Elements
+    // 3. Screen Transitions
     const screenEnvelope = document.getElementById('screen-envelope');
     const screenProposal = document.getElementById('screen-proposal');
     const screenCelebration = document.getElementById('screen-celebration');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const personalNote = document.getElementById('personalNote');
     const whatsappLink = document.getElementById('whatsappLink');
 
-    // Open Envelope Action
+    // Open Envelope
     if (openEnvelopeBtn) {
         openEnvelopeBtn.addEventListener('click', () => {
             if (screenEnvelope && screenProposal) {
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Dodging "Let Me Think" Button Logic
+    // Dodging Button Logic
     function moveButton() {
         if (!thinkBtn) return;
         const x = Math.floor(Math.random() * 220) - 110;
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Canvas Confetti Animation
+    // Canvas Confetti
     function triggerConfetti() {
         if (typeof confetti !== 'function') return;
 
